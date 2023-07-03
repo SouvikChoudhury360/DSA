@@ -34,4 +34,5 @@ public:
 // Leetcode 121
 // Next Greater Element to right modification, change -> only store in stack if stack.top > element
 // Traverse from back, store the element in stack if stack empty
-// if not empty check the stack elements, if greater element present then update ans else remove it from stack and at last push the array element to the stack
+// if not empty check the stack elements, if greater element present then update ans else remove it from stack and at last push the array element to the stack.
+// Memory optimisation: instead of vector ans, only a variale could have been taken.
