@@ -21,3 +21,8 @@ public:
         return out;
     }
 };
+
+// Leetcode 122
+// Grredy approach, m -> min element till ith index
+// if ith element is smaller than m, update m
+// else execute a trade and set new minimum to ith index
