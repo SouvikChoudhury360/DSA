@@ -12,23 +12,23 @@ struct ListNode {
 class Solution {
 public:
     ListNode* reverseList(ListNode* head) {
-        if(head==nullptr or head->next == nullptr){
-            return head;
-        }
+       ListNode* prev = nullptr;
+        ListNode* curr = head;
+        ListNode* next = nullptr;
 
-        ListNode* temp = reverseList(head->next);
-        ListNode* end = temp;
-        while(end != nullptr and end->next != nullptr){
-            end = end->next;
-        }
-        end->next = head;
-        head->next = nullptr;
-        return temp;
+     while (curr != nullptr) {
+        next = curr->next;
+        curr->next = prev;
+        prev = curr;
+        curr = next;
+      }
+
+       return prev;
     }
 };
 
 
 // Leetcode 206
-// Recursive, base case single element return it
-// recursion will reverse the rest ll, 
-// we have to set the current node to the end of the reversed ll from recursion and assign its next to null
+// keep next element of element to be reversed
+// change the next attribute
+// increment prev and curr pointers
